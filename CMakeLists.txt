@@ -8,12 +8,12 @@ set(CMAKE_CXX_STANDARD 23)
 
 set(IMGUI_PATH  "${CMAKE_CURRENT_SOURCE_DIR}")
 message("${IMGUI_PATH}")
-    
+
 # Compile as static library
 file(GLOB IMGUI_SOURCES "${IMGUI_PATH}/*.cpp")
 add_library(ImGui STATIC "${IMGUI_SOURCES}")
 target_include_directories(ImGui PUBLIC "${IMGUI_PATH}")
-target_link_libraries(ImGui PRIVATE glfw)
+target_link_libraries(ImGui PUBLIC glfw)
 
 # Try to build one of the example executables.
 set(BACKENDS_INCLUDE_DIRS
